@@ -1,6 +1,6 @@
 {
   "name": "cli",
-  "description": "Dev CLI",
+  "description": "Valentin's development command line interface.",
   "version": "0.0.0",
   "author": "Valentin Vogel",
   "bin": {
@@ -51,13 +51,7 @@
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
-      }
-    }
+    ]
   },
   "repository": "valentin-vogel/cli",
   "scripts": {

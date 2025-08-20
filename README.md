@@ -30,18 +30,18 @@ USAGE
 # Commands
 <!-- commands -->
 * [`cli hello PERSON`](#cli-hello-person)
-* [`cli hello world`](#cli-hello-world)
+* [`cli hello:world`](#cli-helloworld)
 * [`cli help [COMMAND]`](#cli-help-command)
 * [`cli plugins`](#cli-plugins)
-* [`cli plugins add PLUGIN`](#cli-plugins-add-plugin)
+* [`cli plugins:add PLUGIN`](#cli-pluginsadd-plugin)
 * [`cli plugins:inspect PLUGIN...`](#cli-pluginsinspect-plugin)
-* [`cli plugins install PLUGIN`](#cli-plugins-install-plugin)
-* [`cli plugins link PATH`](#cli-plugins-link-path)
-* [`cli plugins remove [PLUGIN]`](#cli-plugins-remove-plugin)
-* [`cli plugins reset`](#cli-plugins-reset)
-* [`cli plugins uninstall [PLUGIN]`](#cli-plugins-uninstall-plugin)
-* [`cli plugins unlink [PLUGIN]`](#cli-plugins-unlink-plugin)
-* [`cli plugins update`](#cli-plugins-update)
+* [`cli plugins:install PLUGIN`](#cli-pluginsinstall-plugin)
+* [`cli plugins:link PATH`](#cli-pluginslink-path)
+* [`cli plugins:remove [PLUGIN]`](#cli-pluginsremove-plugin)
+* [`cli plugins:reset`](#cli-pluginsreset)
+* [`cli plugins:uninstall [PLUGIN]`](#cli-pluginsuninstall-plugin)
+* [`cli plugins:unlink [PLUGIN]`](#cli-pluginsunlink-plugin)
+* [`cli plugins:update`](#cli-pluginsupdate)
 
 ## `cli hello PERSON`
 
@@ -67,19 +67,19 @@ EXAMPLES
 
 _See code: [src/commands/hello/index.ts](https://github.com/valentin-vogel/cli/blob/v0.0.0/src/commands/hello/index.ts)_
 
-## `cli hello world`
+## `cli hello:world`
 
 Say hello world
 
 ```
 USAGE
-  $ cli hello world
+  $ cli hello:world
 
 DESCRIPTION
   Say hello world
 
 EXAMPLES
-  $ cli hello world
+  $ cli hello:world
   hello world! (./src/commands/hello/world.ts)
 ```
 
@@ -128,13 +128,13 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
 
-## `cli plugins add PLUGIN`
+## `cli plugins:add PLUGIN`
 
 Installs a plugin into cli.
 
 ```
 USAGE
-  $ cli plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ cli plugins:add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -159,20 +159,20 @@ DESCRIPTION
   Use the CLI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ cli plugins add
+  $ cli plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ cli plugins add myplugin
+    $ cli plugins:add myplugin
 
   Install a plugin from a github url.
 
-    $ cli plugins add https://github.com/someuser/someplugin
+    $ cli plugins:add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ cli plugins add someuser/someplugin
+    $ cli plugins:add someuser/someplugin
 ```
 
 ## `cli plugins:inspect PLUGIN...`
@@ -181,7 +181,7 @@ Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ cli plugins inspect PLUGIN...
+  $ cli plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -197,18 +197,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ cli plugins inspect myplugin
+  $ cli plugins:inspect myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
 
-## `cli plugins install PLUGIN`
+## `cli plugins:install PLUGIN`
 
 Installs a plugin into cli.
 
 ```
 USAGE
-  $ cli plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ cli plugins:install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -233,31 +233,31 @@ DESCRIPTION
   Use the CLI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ cli plugins add
+  $ cli plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ cli plugins install myplugin
+    $ cli plugins:install myplugin
 
   Install a plugin from a github url.
 
-    $ cli plugins install https://github.com/someuser/someplugin
+    $ cli plugins:install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ cli plugins install someuser/someplugin
+    $ cli plugins:install someuser/someplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
 
-## `cli plugins link PATH`
+## `cli plugins:link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ cli plugins link PATH [-h] [--install] [-v]
+  $ cli plugins:link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -277,18 +277,18 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ cli plugins link myplugin
+  $ cli plugins:link myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
 
-## `cli plugins remove [PLUGIN]`
+## `cli plugins:remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cli plugins remove [PLUGIN...] [-h] [-v]
+  $ cli plugins:remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -301,20 +301,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cli plugins unlink
-  $ cli plugins remove
+  $ cli plugins:unlink
+  $ cli plugins:remove
 
 EXAMPLES
-  $ cli plugins remove myplugin
+  $ cli plugins:remove myplugin
 ```
 
-## `cli plugins reset`
+## `cli plugins:reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ cli plugins reset [--hard] [--reinstall]
+  $ cli plugins:reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
@@ -323,13 +323,13 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
 
-## `cli plugins uninstall [PLUGIN]`
+## `cli plugins:uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cli plugins uninstall [PLUGIN...] [-h] [-v]
+  $ cli plugins:uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -342,22 +342,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cli plugins unlink
-  $ cli plugins remove
+  $ cli plugins:unlink
+  $ cli plugins:remove
 
 EXAMPLES
-  $ cli plugins uninstall myplugin
+  $ cli plugins:uninstall myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
 
-## `cli plugins unlink [PLUGIN]`
+## `cli plugins:unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cli plugins unlink [PLUGIN...] [-h] [-v]
+  $ cli plugins:unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -370,20 +370,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cli plugins unlink
-  $ cli plugins remove
+  $ cli plugins:unlink
+  $ cli plugins:remove
 
 EXAMPLES
-  $ cli plugins unlink myplugin
+  $ cli plugins:unlink myplugin
 ```
 
-## `cli plugins update`
+## `cli plugins:update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ cli plugins update [-h] [-v]
+  $ cli plugins:update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
