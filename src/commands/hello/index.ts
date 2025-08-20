@@ -4,12 +4,7 @@ export default class Hello extends Command {
   static args = {
     person: Args.string({description: 'Person to say hello to', required: true}),
   }
-  static description = 'Say hello'
-  static examples = [
-    `<%= config.bin %> <%= command.id %> friend --from oclif
-hello friend from oclif! (./src/commands/hello/index.ts)
-`,
-  ]
+  static description = 'Say hello2'
   static flags = {
     from: Flags.string({char: 'f', description: 'Who is saying hello', required: true}),
   }
